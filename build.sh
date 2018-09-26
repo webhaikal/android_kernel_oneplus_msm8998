@@ -9,9 +9,9 @@ export KBUILD_BUILD_HOST=h1
 make O=out lineage_oneplus5_defconfig
 make O=out -j$(nproc --all)
 
-cp /home/haikalizz06/dumpling/out/arch/arm64/boot/Image.gz-dtb /home/haikalizz06/oneplus/kernels/pie
+cp /home/haikalizz06/dumpling/out/arch/arm64/boot/Image.gz-dtb /home/haikalizz06/oneplus/kernels/pie/Image.gz-dtb
 cd /home/haikalizz06/oneplus/
 zipfile="SenseiDumpling-$version-$(date +"%Y-%m-%d(%I.%M%p)").zip"
 echo $zipfile
-zip -r $zipfile * -x README*
+zip -r $zipfile * -x README.md
 curl --upload-file ./$zipfile https://transfer.sh/$zipfile
