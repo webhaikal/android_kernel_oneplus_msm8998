@@ -11,6 +11,7 @@ make O=out -j$(nproc --all)
 
 cp /home/haikalizz06/dumpling/out/arch/arm64/boot/Image.gz-dtb /home/haikalizz06/oneplus/kernels/pie/Image.gz-dtb
 cd /home/haikalizz06/oneplus/
+rm SenseiDumpling*.zip
 zipfile="SenseiDumpling-$version-$(date +"%Y-%m-%d(%I.%M%p)").zip"
 echo $zipfile
 zip -r $zipfile * -x README.md
